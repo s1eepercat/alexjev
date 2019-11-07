@@ -6,6 +6,9 @@
     justify-content: center;
     align-items: center;
 
+    position: relative;
+
+
     &__background {
         width: 0;
         height: 0;
@@ -20,10 +23,16 @@
         transition: width 2s, height 2s;
     }
 
+    &__button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
     &__checkbox {
         width: 5rem;
         height:5rem;
-        // display: none;
+        display: none;
     }
 
     &__checkbox:checked ~ &__background {
@@ -31,11 +40,9 @@
         height: 100%;
     }
 
-    &__button {
-
-    }
-
-    &__icon {
-
+    &__checkbox:checked,
+    &__checkbox:checked ~ &__button {
+        width: 0;
+        height: 0;
     }
 }
