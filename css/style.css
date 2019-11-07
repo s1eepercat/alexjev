@@ -27,20 +27,33 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr repeat(2, minmax(300px, 20vw)) 1fr;
-  grid-template-rows: 20vh minmax(500px, 50vh); }
+  grid-template-rows: 25vh minmax(500px, 50vh); }
 
 .header {
   grid-column: 2/ span 2;
   grid-row: 1/2; }
 
-.background {
+.center {
   grid-column: 2/ span 2;
   grid-row: 2/ span 1;
-  background-image: url(../img/me-1.jpg);
-  background-size: cover;
-  background-position: center;
-  animation: a-main 7s infinite;
-  animation-fill-mode: backwards; }
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .center__background {
+    width: 0;
+    height: 0;
+    background-image: url(../img/me-1.jpg);
+    background-size: cover;
+    background-position: center;
+    animation: a-main 7s infinite;
+    animation-fill-mode: backwards;
+    transition: width 2s, height 2s; }
+  .center__checkbox {
+    width: 5rem;
+    height: 5rem; }
+  .center__checkbox:checked ~ .center__background {
+    width: 100%;
+    height: 100%; }
 
 .sidebar {
   grid-column: 4/-1;

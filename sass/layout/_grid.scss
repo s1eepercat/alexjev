@@ -2,5 +2,5 @@
     display: grid;
 
     grid-template-columns: 1fr repeat(2,minmax(300px,20vw)) 1fr;
-    grid-template-rows: 20vh minmax(500px,50vh); 
+    grid-template-rows: 25vh minmax(500px,50vh); 
 }
