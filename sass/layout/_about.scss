@@ -1,0 +1,8 @@
+.about {
+    grid-column: 2/3;
+    grid-row: 2/ span 1;
+
+    background-color: $color-white-1;
+    align-self: start;
+    justify-self: start;
+}

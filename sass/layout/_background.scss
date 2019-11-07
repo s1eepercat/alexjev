@@ -1,0 +1,11 @@
+.background {
+    grid-column: 2/ span 2;
+    grid-row: 2/ span 1;
+
+    background-image: url(../img/me-1.jpg);
+    background-size: cover;
+    background-position: center;
+
+    animation: a-main 7s infinite; 
+    animation-fill-mode: backwards;
+}
