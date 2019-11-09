@@ -4,36 +4,15 @@
   line-height: 1.5;
   display: block; }
 
-.heading {
-  font-size: 2.8rem;
-  padding: 0rem 1rem;
-  color: #000;
-  justify-self: flex-start;
-  align-self: flex-end;
-  transform-origin: left;
-  animation: line-grow 0.7s cubic-bezier(0.86, 0, 0.07, 1), text-appear 0.1s 0.95s, slow-float 8s 1.5s infinite;
-  animation-fill-mode: forwards;
-  position: relative; }
-  .heading::after {
-    content: "";
-    height: 100%;
-    width: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #f9f7f6;
-    border: 1px solid #000;
-    opacity: 0;
-    animation: white-line-move 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.7s; }
-
-@keyframes a-main {
+@keyframes bg-swap {
   0% {
     background-image: url(../img/me-1.jpg); }
   33% {
     background-image: url(../img/me-2.jpg); }
   66% {
-    background-image: url(../img/me-3.jpg); } }
+    background-image: url(../img/me-3.jpg); }
+  100% {
+    background-image: url(../img/me-1.jpg); } }
 
 @keyframes line-grow {
   0% {
@@ -106,14 +85,51 @@ body {
   grid-row: 1/2;
   display: flex; }
 
+.heading {
+  font-size: 2.8rem;
+  padding: 0rem 1rem;
+  justify-self: flex-start;
+  align-self: flex-end;
+  transform-origin: left;
+  position: relative;
+  animation: line-grow 0.7s cubic-bezier(0.86, 0, 0.07, 1), text-appear 0.1s 0.95s, slow-float 8s 1.5s infinite;
+  animation-fill-mode: forwards;
+  color: #000; }
+  .heading::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f9f7f6;
+    border: 1px solid #000;
+    opacity: 0;
+    animation: white-line-move 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.7s; }
+
 .background {
   grid-column: 2/ span 2;
   grid-row: 2/ span 1;
-  background-image: url(../img/me-1.jpg);
   background-size: cover;
   background-position: center;
-  animation: a-main 7s infinite;
-  animation-fill-mode: backwards; }
+  transform-origin: left;
+  position: relative;
+  animation: line-grow 0.7s cubic-bezier(0.86, 0, 0.07, 1), bg-swap 7s 0.95s infinite;
+  animation-fill-mode: forwards;
+  background-color: #000; }
+  .background::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f9f7f6;
+    border: 1px solid #000;
+    opacity: 0;
+    animation: white-line-move 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.7s; }
 
 .sidebar {
   grid-column: 4/-1;

@@ -2,12 +2,30 @@
     grid-column: 2/ span 2;
     grid-row: 2/ span 1;
 
-    // border: 2px solid $color-black-1;
-
-    background-image: url(../img/me-1.jpg);
     background-size: cover;
     background-position: center;
+ 
+    transform-origin: left;
+    position: relative;
+    animation: line-grow .7s cubic-bezier(0.86, 0, 0.07, 1), bg-swap 7s .95s infinite;
+    animation-fill-mode: forwards;
 
-    animation: a-main 7s infinite; 
-    animation-fill-mode: backwards;
+    background-color: $color-black-1; //black before the animation
+
+    &::after { //white animation line
+        content: "";
+        height: 100%;
+        width: 100%;
+        display: block;
+        position:absolute;
+        top: 0;
+        left: 0;
+
+        background-color: $color-white-1;
+        border: $border;
+        
+        opacity: 0; //invisible before and after the animation
+
+        animation: white-line-move .5s cubic-bezier(0.86, 0, 0.07, 1) .7s;
+    }
 }
