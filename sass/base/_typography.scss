@@ -1,26 +1,27 @@
-.heading {
-    color: $color-white-1;
+.text {
     background-color: $color-black-1;
     font-weight: $font-w-thin;
     line-height: 1.5;
     display: block;
+}
 
-    &--1 {
-        font-size: 2.8rem;
-        padding: 0rem 1rem;
-        
-        justify-self: flex-start;
-        align-self: flex-end;
+.heading {
+    font-size: 2.8rem;
+    padding: 0rem 1rem;
 
-        transform-origin: left;
-        
-        animation: line-grow .7s cubic-bezier(0.86, 0, 0.07, 1), text-appear .1s .95s; //, slow-float 5s 1.5s infinite;
-        animation-fill-mode: backwards;
+    color: $color-black-1; //black before the animation
+    
+    justify-self: flex-start;
+    align-self: flex-end;
 
-        position:relative;
-    }
+    transform-origin: left;
+    
+    animation: line-grow .7s cubic-bezier(0.86, 0, 0.07, 1), text-appear .1s .95s, slow-float 8s 1.5s infinite;
+    animation-fill-mode: forwards;
 
-    &--1::after {
+    position:relative;
+
+    &::after { //white animation line
         content: "";
         height: 100%;
         width: 100%;
@@ -36,5 +37,4 @@
 
         animation: white-line-move .5s cubic-bezier(0.86, 0, 0.07, 1) .7s;
     }
-
 }
