@@ -1,4 +1,49 @@
 .sidebar {
     grid-column: 4/-1;
     grid-row: 2/3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &__btn {
+        transform: translateX(-10rem);
+
+        opacity: 0; 
+        width: 0; //to make it unclickable early
+        height: 0;
+
+        animation: sidebar-btn-move .4s cubic-bezier(0.175, 0.885, 0.32, 1.475) .95s, slow-float 8s 2s infinite;
+        animation-fill-mode: forwards;
+
+        position: relative;
+    }
+
 }
+
+
+
+
+        // &::before {
+        //     content: "Github";
+        //     width: 0;
+        //     padding: 0;
+
+        //     height: 100%;
+        //     position: absolute;
+        //     top: 0;
+        //     left:100%;
+
+        //     background-color: $color-black-1;
+        //     color: $color-white-1;
+        //     // padding: 9px 10px 7px 10px;
+        //     // width: 200%;
+
+        //     transition: width .5s;
+        // }
+
+        // &:hover ~ &::before {
+        //     padding: 9px 10px 7px 10px;
+        //     width: 200%;
+        // }

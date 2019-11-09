@@ -1,0 +1,18 @@
+.btn {
+    background-color: $color-black-1;
+    height: $btn-size;
+    width: $btn-size;
+    margin: 0px 0px $gap $gap;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    &__icon {
+        fill: $color-white-1;
+        height: 2rem;
+        width: 2rem;
+    }
+}
