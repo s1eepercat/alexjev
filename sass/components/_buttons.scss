@@ -1,14 +1,28 @@
+//Container for a button, has animations
+.btn-container {
+    transition: .2s all;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+
+    &:active {
+        transform: translateY(3px); 
+        transform: scale(.98);
+    }
+}
+
+//Button itself, has to go into container
 .btn {
-    background-color: $color-black-1;
     height: $btn-size;
     width: $btn-size;
-    margin: 0px 0px $gap $gap;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     cursor: pointer;
+    background-color: $color-black-1;
 
     &__icon {
         fill: $color-white-1;
@@ -16,3 +30,4 @@
         width: 2rem;
     }
 }
+
