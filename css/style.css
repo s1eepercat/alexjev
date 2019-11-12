@@ -161,14 +161,70 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start; }
+  .sidebar__button-box {
+    transition: .2s all; }
+    .sidebar__button-box:hover {
+      transform: translateY(-3px); }
+    .sidebar__button-box:active {
+      transform: translateY(3px);
+      transform: scale(0.98); }
   .sidebar__link {
     transform: translateX(-10rem);
     opacity: 0;
     width: 0;
     height: 0;
-    animation: sidebar-btn-move 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.475) 0.95s, slow-float 8s 2s infinite;
-    animation-fill-mode: forwards;
     position: relative; }
+    .sidebar__link--1 {
+      animation: sidebar-btn-move 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.475) 0.95s, slow-float 8s 2s infinite;
+      animation-fill-mode: forwards; }
+      .sidebar__link--1::before {
+        content: "Github";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: #000;
+        color: #f9f7f6;
+        height: 100%;
+        text-align: center;
+        line-height: 4rem;
+        width: 0;
+        transition: width .2s; }
+      .sidebar__link--1:hover::before {
+        width: 220%; }
+    .sidebar__link--2 {
+      animation: sidebar-btn-move 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.475) 1s, slow-float 8s 2s infinite;
+      animation-fill-mode: forwards; }
+      .sidebar__link--2::before {
+        content: "LinkedIn";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: #000;
+        color: #f9f7f6;
+        height: 100%;
+        text-align: center;
+        line-height: 4rem;
+        width: 0;
+        transition: width .2s; }
+      .sidebar__link--2:hover::before {
+        width: 220%; }
+    .sidebar__link--3 {
+      animation: sidebar-btn-move 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.475) 1.05s, slow-float 8s 2s infinite;
+      animation-fill-mode: forwards; }
+      .sidebar__link--3::before {
+        content: "Facebook";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: #000;
+        color: #f9f7f6;
+        height: 100%;
+        text-align: center;
+        line-height: 4rem;
+        width: 0;
+        transition: width .2s; }
+      .sidebar__link--3:hover::before {
+        width: 220%; }
 
 .about {
   grid-column: 2/3;

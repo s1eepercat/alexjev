@@ -7,6 +7,19 @@
     align-items: flex-start;
     justify-content: flex-start;
 
+    &__button-box {
+        transition: .2s all;
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+
+        &:active {
+            transform: translateY(3px); 
+            transform: scale(.98);
+        }
+    }
+
     &__link {
         transform: translateX(-10rem);
 
@@ -14,36 +27,27 @@
         width: 0; //to make it unclickable early
         height: 0;
 
-        animation: sidebar-btn-move .4s cubic-bezier(0.175, 0.885, 0.32, 1.475) .95s, slow-float 8s 2s infinite;
-        animation-fill-mode: forwards;
-
         position: relative;
+
+        &--1 {
+            @include sidebar-button-anim(.95s);
+
+            &::before {@include sidebar-before("Github");}
+            &:hover::before {width: 220%;}
+        }
+
+        &--2 {
+            @include sidebar-button-anim(1s);
+
+            &::before {@include sidebar-before("LinkedIn");}
+            &:hover::before {width: 220%;}
+        }
+
+        &--3 {
+            @include sidebar-button-anim(1.05s);
+
+            &::before {@include sidebar-before("Facebook");}
+            &:hover::before {width: 220%;}
+        }
     }
-
 }
-
-
-
-
-        // &::before {
-        //     content: "Github";
-        //     width: 0;
-        //     padding: 0;
-
-        //     height: 100%;
-        //     position: absolute;
-        //     top: 0;
-        //     left:100%;
-
-        //     background-color: $color-black-1;
-        //     color: $color-white-1;
-        //     // padding: 9px 10px 7px 10px;
-        //     // width: 200%;
-
-        //     transition: width .5s;
-        // }
-
-        // &:hover ~ &::before {
-        //     padding: 9px 10px 7px 10px;
-        //     width: 200%;
-        // }
