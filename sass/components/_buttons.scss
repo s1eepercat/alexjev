@@ -1,5 +1,8 @@
-//Container for a button, has animations
+//Container for a button, has main-button animations
 .btn-container {
+    height: $btn-size;
+    width: $btn-size;
+    
     transition: .2s all;
 
     &:hover {
@@ -12,7 +15,7 @@
     }
 }
 
-//Button itself, has to go into container
+//Button itself, has to go into a container
 .btn {
     height: $btn-size;
     width: $btn-size;
@@ -21,8 +24,9 @@
     justify-content: center;
     align-items: center;
 
-    cursor: pointer;
     background-color: $color-black-1;
+
+    cursor: pointer;
 
     &__icon {
         fill: $color-white-1;
@@ -30,4 +34,3 @@
         width: 2rem;
     }
 }
-

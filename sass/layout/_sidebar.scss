@@ -8,14 +8,8 @@
     justify-content: flex-start;
 
     &__box {
-        height: $btn-size;
-        width: $btn-size;
-        margin: 0px 0px $gap $gap;
-
         transform: translateX(-10rem);
         opacity: 0; 
-        width: 0; //to make it unclickable early
-        height: 0;
 
         position: relative;
 

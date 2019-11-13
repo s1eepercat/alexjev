@@ -44,14 +44,21 @@
 @keyframes sidebar-btn-move {
     0% {
         transform: translateX(-10rem);
-        width: $btn-size; 
-        height: $btn-size;
     }
 
     100% {
         transform: translateX(0);
         opacity: 1;
-        width: $btn-size; 
-        height: $btn-size;
+    }
+}
+
+@keyframes about-move-right-in {
+    0% {
+        transform: translateX(-5rem);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
     }
 }

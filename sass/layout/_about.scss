@@ -5,5 +5,62 @@
     align-self: start;
     justify-self: start;
 
-    // z-index: 50;
+    z-index: 50;
+
+    height: 100%;
+    width: 100%;
+    padding: $gap;
+
+    animation: slow-float 6s 2s infinite;
+
+    &__checkbox {
+        display:none;
+    }
+
+    &__box {
+        transform: translateX(-5rem);
+        opacity: 0;
+
+        animation: about-move-right-in .5s cubic-bezier(0.175, 0.885, 0.32, 1.475) .95s;
+        animation-fill-mode: forwards;
+    }
+
+    &__container {
+        height: 100%;
+        width: 100%;
+        padding-top: 3px;
+
+        display: flex;
+        flex-direction: column;
+
+        & > p {
+            color:$color-white-1;
+            background-color: $color-black-1;
+            text-align: center;
+            font-size: 1.4rem;
+ 
+            padding: 1rem .4rem 1rem .9rem;
+            letter-spacing: .5rem;
+
+            transition: all .35s;
+            opacity: 0;
+
+            margin-bottom: $gap * .6;
+        }
+    }
+
+    &__text--left {
+        transform: translateX(5rem);
+        align-self: flex-start;
+    }
+
+    &__text--right {
+        transform: translateX(-5rem);
+        align-self: flex-end;
+    }
+
+    &__checkbox:checked ~ &__container > p {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
