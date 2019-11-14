@@ -4,8 +4,6 @@
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
 
     &__box {
         transform: translateX(-10rem);
@@ -32,6 +30,13 @@
 
             &::before {@include sidebar-before("Facebook");}
             &:hover::before {width: 220%;}
+        }
+
+        &--4 {
+            @include sidebar-button-anim(1.1s);
+
+            &::before {@include sidebar-before("jevlentjev@gmail.com");}
+            &:hover::before {width: 500%;}
         }
     }
 }
