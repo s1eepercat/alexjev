@@ -89,6 +89,9 @@ body {
   font-size: 1.6rem;
   line-height: 1.5; }
 
+*::selection {
+  background-color: orangered; }
+
 .m-left-bot {
   margin: 0px 0px 3.5rem 3.5rem; }
 
