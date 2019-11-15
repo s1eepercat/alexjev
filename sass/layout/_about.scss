@@ -32,21 +32,27 @@
 
         display: flex;
         flex-direction: column;
+    }
 
-        & > p {
-            color:$color-white-1;
-            background-color: $color-black-1;
-            text-align: center;
-            font-size: 1.4rem;
- 
-            padding: 1rem .4rem 1rem .9rem;
-            letter-spacing: .5rem;
 
-            transition: all .35s;
-            opacity: 0;
+    &__text {
+        display: none; //js will change this to block
 
-            margin-bottom: $gap * .6;
-        }
+        color:$color-white-1;
+        background-color: $color-black-1;
+        text-align: center;
+        font-size: 1.4rem;
+        padding: 1rem .4rem 1rem .9rem;
+        letter-spacing: .5rem;
+        margin-bottom: $gap * .6;
+
+        opacity: 0;
+        transition: opacity .35s, transform .35s;
+    }
+
+    &__checkbox:checked ~ &__container > &__text {
+        transform: translateX(0);
+        opacity: 1;
     }
 
     &__text--left {
@@ -57,10 +63,5 @@
     &__text--right {
         transform: translateX(-5rem);
         align-self: flex-end;
-    }
-
-    &__checkbox:checked ~ &__container > p {
-        transform: translateX(0);
-        opacity: 1;
     }
 }

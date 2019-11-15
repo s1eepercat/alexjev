@@ -286,25 +286,26 @@ body {
     padding-top: 3px;
     display: flex;
     flex-direction: column; }
-    .about__container > p {
-      color: #f9f7f6;
-      background-color: #000;
-      text-align: center;
-      font-size: 1.4rem;
-      padding: 1rem .4rem 1rem .9rem;
-      letter-spacing: .5rem;
-      transition: all .35s;
-      opacity: 0;
-      margin-bottom: 2.1rem; }
+  .about__text {
+    display: none;
+    color: #f9f7f6;
+    background-color: #000;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 1rem .4rem 1rem .9rem;
+    letter-spacing: .5rem;
+    margin-bottom: 2.1rem;
+    opacity: 0;
+    transition: opacity .35s, transform .35s; }
+  .about__checkbox:checked ~ .about__container > .about__text {
+    transform: translateX(0);
+    opacity: 1; }
   .about__text--left {
     transform: translateX(5rem);
     align-self: flex-start; }
   .about__text--right {
     transform: translateX(-5rem);
     align-self: flex-end; }
-  .about__checkbox:checked ~ .about__container > p {
-    transform: translateX(0);
-    opacity: 1; }
 
 .contact {
   grid-column: 3/4;
