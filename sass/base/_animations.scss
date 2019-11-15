@@ -62,3 +62,9 @@
         opacity: 1;
     }
 }
+
+@keyframes projects-btn-show {
+    100% {
+        color: $color-white-1;
+    }
+}

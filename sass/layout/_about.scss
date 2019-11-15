@@ -11,7 +11,7 @@
     width: 100%;
     padding: $gap;
 
-    animation: slow-float 6s 2s infinite;
+    animation: slow-float 12s 2s infinite;
 
     &__checkbox {
         display:none;
@@ -36,14 +36,12 @@
 
 
     &__text {
-        display: none; //js will change this to block
+        display: none; //js will change this to block after .5s
 
         color:$color-white-1;
         background-color: $color-black-1;
         text-align: center;
-        font-size: 1.4rem;
         padding: 1rem .4rem 1rem .9rem;
-        letter-spacing: .5rem;
         margin-bottom: $gap * .6;
 
         opacity: 0;
