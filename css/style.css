@@ -391,8 +391,21 @@ body {
     transition: all .35s; }
     .projects__project:hover {
       transform: scale(0.95); }
-  .projects__project-text {
+  .projects__project-name {
     padding: 1rem 2rem 1rem 2rem; }
+    .projects__project-name:hover {
+      position: relative; }
+    .projects__project-name:hover ~ .projects__selector {
+      display: block; }
+  .projects__project-git {
+    padding: 1rem 2rem 1rem 2rem; }
+  .projects__project-lang {
+    padding: 1rem 2rem 1rem 2rem; }
+  .projects__selector {
+    position: absolute;
+    background-color: red;
+    top: 0;
+    left: 0; }
 
 .footer {
   grid-column: 2/span 2;

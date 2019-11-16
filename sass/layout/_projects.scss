@@ -109,9 +109,36 @@
         }
     }
 
-    &__project-text {
-        padding: 1rem 2rem 1rem 2rem;
-    }
 
     
+    &__project {
+        &-name {
+            padding: 1rem 2rem 1rem 2rem;
+
+            &:hover {
+                position:relative;
+            }
+
+            &:hover ~ .projects__selector {
+                display: block;
+            }
+        }
+
+        &-git {
+            padding: 1rem 2rem 1rem 2rem;
+        }
+
+        &-lang {
+            padding: 1rem 2rem 1rem 2rem;
+        }
+    }
+
+    &__selector {
+        position: absolute;
+        // display: none;
+        background-color: red;
+        top: 0;
+        left: 0;
+    }
+
 }
