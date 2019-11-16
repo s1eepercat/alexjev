@@ -10,7 +10,7 @@
 
     &__area {
         width: 100%;
-        height: 100%;
+        // height: 100%;
 
         display: flex;
         flex-direction: column;
@@ -75,6 +75,8 @@
         //5rem for padding , 20rem for 1 row
 
         height: 20rem;
+
+        margin-top: $gap;
     }
 
     &__container {

@@ -16,6 +16,8 @@
 }
 
 .btn-container-long {
+    height: $btn-size;
+
     transition: .2s all;
 
     &:hover {
