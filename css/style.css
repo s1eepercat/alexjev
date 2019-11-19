@@ -199,8 +199,7 @@ body {
   position: relative;
   animation: line-grow 0.7s cubic-bezier(0.86, 0, 0.07, 1), bg-swap 7s 0.95s infinite;
   animation-fill-mode: forwards;
-  background-color: #080808;
-  border: 1px solid #080808; }
+  background-color: #080808; }
   .background::after {
     content: "";
     height: 100%;
@@ -384,7 +383,7 @@ body {
   .projects__checkbox:checked ~ .projects__area > .btn-container-long > .projects__btn > .projects__icon {
     transform: rotate(180deg); }
   .projects__checkbox:checked ~ .projects__area > .projects__container {
-    height: 20rem;
+    height: 32.5rem;
     margin-top: 3.5rem; }
   .projects__container {
     transition: .35s all;
@@ -395,16 +394,15 @@ body {
     flex-wrap: wrap;
     align-content: space-between; }
   .projects__project {
-    background-color: #080808;
+    background-image: linear-gradient(to left, #aaaaaa, #121212);
     color: #f2f2f2;
-    width: 20rem;
-    height: 20rem;
+    width: 100%;
+    height: 15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    transition: all .35s;
-    margin-right: 5rem; }
+    transition: all .35s; }
     .projects__project:hover {
       transform: scale(0.98); }
   .projects__project-text {
