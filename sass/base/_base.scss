@@ -14,13 +14,21 @@ html {
 body {
     font-family: 'Raleway', sans-serif;
     
-    color:$color-black-1;
+    color: $color-white-1;
     font-weight: $font-w-thin;
     font-size: 1.4rem;
     line-height: 1.5;
     letter-spacing: .5rem;
+
+    background-color: $color-grey-1;
 }
 
 *::selection {
     background-color: $color-white-1;
+}
+
+*:link,
+*:visited {
+    text-decoration: none;
+    color: inherit;
 }

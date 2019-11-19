@@ -108,25 +108,44 @@
             </div>
 
             <div class="projects__container">
+
+                <!-- Hidden github project -->
                 <div class="projects__project">
-                    <svg class="projects__selector btn__icon">
-                        <use xlink:href="img/sprite.svg#icon-triangle-left"></use>
-                    </svg>
-                    <p class="projects__project-name cursor"><b>House Of Persians</b></p>
-                    <p class="projects__project-git cursor">Github</p>
-                    <p class="projects__project-lang">HTML, CCS, Javascript, PHP</p>
+                    <a href="http://www.houseofpersians.com" class="projects__project-text cursor">
+                        <b>House Of Persians</b>
+                        <svg class="projects__selector btn__icon">
+                            <use xlink:href="img/sprite.svg#icon-triangle-left"></use>
+                        </svg>
+                    </a>
+                    <p href="#" class="projects__project-text crossed">
+                        Github
+                    </p>
+                    <p class="projects__project-text">HTML, CCS, Javascript, PHP</p>
                 </div>
-                <div class="projects__project">TEST</div>
-                <div class="projects__project">TEST</div>
-                <!-- <div class="projects__project"></div>
-                <div class="projects__project"></div>
-                <div class="projects__project"></div> -->
+
+                <!-- Project with a github -->
+                <div class="projects__project">
+                    <a href="http://s1eepercat.smshostingas.lt/cooking-upp/" class="projects__project-text cursor">
+                        <b>Cooking Upp</b>
+                        <svg class="projects__selector btn__icon">
+                            <use xlink:href="img/sprite.svg#icon-triangle-left"></use>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/s1eepercat/cooking-app" class="projects__project-text cursor">
+                        Github
+                        <svg class="projects__selector btn__icon">
+                            <use xlink:href="img/sprite.svg#icon-triangle-left"></use>
+                        </svg>
+                    </a>
+                    <p class="projects__project-text">HTML, CSS, Javascript, React</p>
+                </div>
+
             </div>
 
     </section>
 
     <footer class="footer">
-        <p class="copyright">&copy; All rights reserved 2019.</p>
+        <p class="copyright">Made by Aleksandr Jevlentjev &copy; 2019</p>
     </footer>
 
     <script type="text/javascript" src="js/script.js"></script>

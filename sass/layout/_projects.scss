@@ -17,7 +17,7 @@
         justify-content: flex-start;
         align-items: center;
 
-        padding: $gap 0 $gap 0;
+        padding: $gap 0 $gap*3 0;
     }
 
     &__btn {
@@ -88,7 +88,6 @@
 
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         align-content: space-between;
     }
 
@@ -104,41 +103,32 @@
         align-items: flex-start;
 
         transition: all .35s;
+
         &:hover {
-            transform:scale(0.95);
+            transform:scale(0.98);
         }
+
+        margin-right: 5rem;
     }
-
-
     
-    &__project {
-        &-name {
-            padding: 1rem 2rem 1rem 2rem;
-
-            &:hover {
-                position:relative;
-            }
-
-            &:hover ~ .projects__selector {
-                display: block;
-            }
-        }
-
-        &-git {
-            padding: 1rem 2rem 1rem 2rem;
-        }
-
-        &-lang {
-            padding: 1rem 2rem 1rem 2rem;
-        }
+    &__project-text {
+        position: relative;
+        padding: 1rem 2rem 1rem 2rem;
+        width: 100%;
     }
+
+    &__project-text:hover > &__selector {
+        opacity: 1;
+    }   
 
     &__selector {
         position: absolute;
-        // display: none;
-        background-color: red;
-        top: 0;
-        left: 0;
+        opacity: 0;
+        top: 50%;
+        left: 90%;
+        transition: .3s opacity;
+
+        animation: projects-selector 2s ease-in-out infinite;
     }
 
 }
