@@ -303,8 +303,7 @@ body {
   z-index: 50;
   height: 100%;
   width: 100%;
-  padding: 3.5rem;
-  animation: slow-float 12s 2s infinite; }
+  padding: 3.5rem; }
   .about__checkbox {
     display: none; }
   .about__box {
