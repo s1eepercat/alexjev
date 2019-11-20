@@ -5,3 +5,6 @@ setTimeout(function () {
         text.style.display = "block";
     });
 }, 500);
+
+//Fix about section staying open on refresh in a firefox
+document.getElementById("about-toggle").checked = false;
