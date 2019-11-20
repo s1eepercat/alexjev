@@ -383,7 +383,7 @@ body {
   .projects__checkbox:checked ~ .projects__area > .btn-container-long > .projects__btn > .projects__icon {
     transform: rotate(180deg); }
   .projects__checkbox:checked ~ .projects__area > .projects__container {
-    height: 32.5rem;
+    height: 50rem;
     margin-top: 3.5rem; }
   .projects__container {
     transition: .35s all;
@@ -394,7 +394,7 @@ body {
     flex-wrap: wrap;
     align-content: space-between; }
   .projects__project {
-    background-image: linear-gradient(to left, #aaaaaa, #121212);
+    background-image: linear-gradient(to right, #121212, #aaaaaa);
     color: #f2f2f2;
     width: 100%;
     height: 15rem;

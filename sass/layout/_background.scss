@@ -12,8 +12,6 @@
 
     background-color: $color-black-1; //black before the animation
 
-    // border: 1px solid $color-black-1;
-
     &::after { //white animation line
         content: "";
         height: 100%;
