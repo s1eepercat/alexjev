@@ -99,7 +99,7 @@ body {
   font-size: 1.4rem;
   line-height: 1.5;
   letter-spacing: .5rem;
-  background-color: red; }
+  background-color: #d2d2d2; }
 
 #canvas {
   background-color: #d2d2d2;
@@ -392,7 +392,7 @@ body {
     height: 50rem;
     margin-top: 3.5rem; }
   .projects__container {
-    transition: 1s all;
+    transition: .35s all;
     overflow: hidden;
     width: 70rem;
     height: 0;

@@ -105,7 +105,7 @@ class Particle {
 //create particle array
 const init = () => {
     particlesArray = [];
-    let numberOfParticles = 75; //(canvas.height * canvas.width) / 9000;
+    let numberOfParticles = (canvas.height * canvas.width) / 9000;
 
     for (let i = 0; i < numberOfParticles; i++) {
         let size = (Math.random() * 1) + 1;
@@ -142,7 +142,9 @@ const connect = () => {
 //animation loop
 const animate = () => {
     requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, innerWidth, innerHeight * 2);
+
+    const rect = body.getBoundingClientRect();
+    ctx.clearRect(0, 0, rect.width, rect.height);
 
     for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
@@ -156,40 +158,22 @@ const resizeInstant = () => {
     const rect = body.getBoundingClientRect();
     canvas.width = rect.width;
     canvas.height = rect.height;
-    // init();
 }
 
-//resize canvas 25 times in .35s gap
+//resize canvas with a delay, scroll top
 const resizeDelay = () => {
-    var callCount = 0;
-    var repeater = setInterval(function () {
+    window.scrollTo(0, 0);
 
-        if (callCount < 10) {
-
-            const rect = body.getBoundingClientRect();
-
-            if (document.getElementById('projects-toggle').checked == true) {
-                //is opening
-                canvas.height = rect.height;
-            } else {
-                //is closing
-                canvas.height = rect.height - 100;
-            }
-
-            callCount += 1;
-
-        } else {
-            clearInterval(repeater);
-
-            const rect = body.getBoundingClientRect();
-            canvas.height = rect.height;
-        }
-
-    }, 100);
+    setTimeout(function () {
+        const rect = body.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+    }, 350);
 }
 
 window.addEventListener('resize', resizeInstant);
 document.getElementById('projects-toggle').addEventListener('input', resizeDelay);
+
 
 //mouse out event
 window.addEventListener('mouseout', () => {
