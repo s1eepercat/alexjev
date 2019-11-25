@@ -105,7 +105,7 @@ class Particle {
 //create particle array
 const init = () => {
     particlesArray = [];
-    let numberOfParticles = (canvas.height * canvas.width) / 9000;
+    let numberOfParticles = 75; //(canvas.height * canvas.width) / 9000;
 
     for (let i = 0; i < numberOfParticles; i++) {
         let size = (Math.random() * 1) + 1;
@@ -120,13 +120,15 @@ const init = () => {
 }
 
 const connect = () => {
+    let opacityValue = 1;
     for (let a = 0; a < particlesArray.length; a++) {
         for (let b = a; b < particlesArray.length; b++) {
             let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
                 ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
 
             if (distance < (canvas.width / 9) * (canvas.height / 9)) {
-                ctx.strokeStyle = "#121212";
+                opacityValue = 1 - (distance / 20000);
+                ctx.strokeStyle = 'rgba(18,18,18,' + opacityValue + ')';
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -162,7 +164,7 @@ const resizeDelay = () => {
     var callCount = 0;
     var repeater = setInterval(function () {
 
-        if (callCount < 25) {
+        if (callCount < 10) {
 
             const rect = body.getBoundingClientRect();
 
@@ -171,7 +173,7 @@ const resizeDelay = () => {
                 canvas.height = rect.height;
             } else {
                 //is closing
-                canvas.height = rect.height - 58;
+                canvas.height = rect.height - 100;
             }
 
             callCount += 1;
@@ -183,14 +185,17 @@ const resizeDelay = () => {
             canvas.height = rect.height;
         }
 
-    }, 14);
+    }, 100);
 }
 
 window.addEventListener('resize', resizeInstant);
 document.getElementById('projects-toggle').addEventListener('input', resizeDelay);
 
-
-
+//mouse out event
+window.addEventListener('mouseout', () => {
+    mouse.x = undefined;
+    mouse.y = undefined;
+})
 
 init();
 animate();
