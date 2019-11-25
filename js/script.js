@@ -153,14 +153,17 @@ const animate = () => {
     connect();
 }
 
-//resize canvas
+//resize canvas on screen resize
 const resizeInstant = () => {
     const rect = body.getBoundingClientRect();
     canvas.width = rect.width;
     canvas.height = rect.height;
 }
 
-//resize canvas with a delay, scroll top
+window.addEventListener('resize', resizeInstant);
+
+
+//resize canvas with a delay, scroll top on project toggling
 const resizeDelay = () => {
     window.scrollTo(0, 0);
 
@@ -171,7 +174,6 @@ const resizeDelay = () => {
     }, 350);
 }
 
-window.addEventListener('resize', resizeInstant);
 document.getElementById('projects-toggle').addEventListener('input', resizeDelay);
 
 

@@ -1,0 +1,1 @@
+Make all shapes fly towards the visible part of the screen if outside
