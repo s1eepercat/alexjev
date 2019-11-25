@@ -19,15 +19,18 @@ body {
     font-size: 1.4rem;
     line-height: 1.5;
     letter-spacing: .5rem;
+
+    background-color: red; 
 }
 
-canvas { 
-    background-color: $color-grey-1;
+#canvas { 
+    background-color: $color-grey-1; 
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
+    z-index: -1000;
 }
 
 *::selection {
