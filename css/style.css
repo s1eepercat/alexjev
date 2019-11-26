@@ -125,9 +125,6 @@ body {
 .cursor {
   cursor: pointer; }
 
-.crossed {
-  text-decoration: line-through !important; }
-
 .btn-container {
   height: 4rem;
   width: 4rem;

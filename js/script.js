@@ -27,13 +27,13 @@ let particlesArray;
 let mouse = {
     x: null,
     y: null,
-    radius: (canvas.height / 130) * (canvas.width / 130)
+    radius: 100
 }
 
 window.addEventListener('mousemove',
     (event) => {
-        mouse.x = event.x;
-        mouse.y = event.y;
+        mouse.x = event.pageX;
+        mouse.y = event.pageY;
     }
 );
 
@@ -42,7 +42,8 @@ class Particle {
     constructor(x, y, directionX, directionY, size, color) {
         this.x = x;
         this.y = y;
-        this.directionX = directionX;
+        this.directionX = 0;
+        // this.directionX = directionX;
         this.directionY = directionY;
         this.size = size;
         this.color = color;
@@ -66,6 +67,18 @@ class Particle {
         if (this.y > canvas.height || this.y < 0) {
             this.directionY = -this.directionY;
         }
+
+        //If some particles were stuck outside of the canvas, teleport them to the top
+        if (this.y > canvas.height + 15) { //for vertical
+            this.y = 0;
+            this.directionY = Math.abs(this.directionY);
+        }
+
+        // if (this.x > canvas.width + 15) { //for horizontal
+        //     this.x = (Math.random() * canvas.width);
+        //     this.y = 0;
+        //     this.directionY = Math.abs(this.directionY);
+        // }
 
         //check collision detection - mouse position / particle position
         let dx = mouse.x - this.x;
@@ -158,6 +171,8 @@ const resizeInstant = () => {
     const rect = body.getBoundingClientRect();
     canvas.width = rect.width;
     canvas.height = rect.height;
+
+    init();
 }
 
 window.addEventListener('resize', resizeInstant);
@@ -185,3 +200,6 @@ window.addEventListener('mouseout', () => {
 
 init();
 animate();
+
+//test
+window.addEventListener('click', () => { console.log(canvas.height) })
