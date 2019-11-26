@@ -48,7 +48,8 @@
         transition: opacity .35s, transform .35s;
     }
 
-    &__checkbox:checked ~ &__container > &__text {
+    &__checkbox:checked ~ &__container > &__text,
+    &__checkbox:hover ~ &__container > &__text {
         transform: translateX(0);
         opacity: 1;
     }
