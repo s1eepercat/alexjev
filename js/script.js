@@ -43,7 +43,6 @@ class Particle {
         this.x = x;
         this.y = y;
         this.directionX = 0;
-        // this.directionX = directionX;
         this.directionY = directionY;
         this.size = size;
         this.color = color;
@@ -118,7 +117,7 @@ class Particle {
 //create particle array
 const init = () => {
     particlesArray = [];
-    let numberOfParticles = (canvas.height * canvas.width) / 9000;
+    let numberOfParticles = (canvas.height * canvas.width) / 10000;
 
     for (let i = 0; i < numberOfParticles; i++) {
         let size = (Math.random() * 1) + 1;
@@ -166,13 +165,26 @@ const animate = () => {
     connect();
 }
 
+
+//mouse out event
+window.addEventListener('mouseout', () => {
+    mouse.x = undefined;
+    mouse.y = undefined;
+})
+
+init();
+animate();
+
+
 //resize canvas on screen resize
 const resizeInstant = () => {
-    const rect = body.getBoundingClientRect();
-    canvas.width = rect.width;
-    canvas.height = rect.height;
-
     init();
+
+    setTimeout(function () { //needs a slight delay to remove a gap below footer
+        const rect = body.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+    }, 200);
 }
 
 window.addEventListener('resize', resizeInstant);
@@ -192,14 +204,6 @@ const resizeDelay = () => {
 document.getElementById('projects-toggle').addEventListener('input', resizeDelay);
 
 
-//mouse out event
-window.addEventListener('mouseout', () => {
-    mouse.x = undefined;
-    mouse.y = undefined;
-})
-
-init();
-animate();
 
 //test
-window.addEventListener('click', () => { console.log(canvas.height) })
+console.log(particlesArray.length);

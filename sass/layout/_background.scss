@@ -12,6 +12,38 @@
 
     background-color: $color-black-1; //black before the animation
 
+    @media only screen and (max-width: $bp-medium) {
+        grid-column: 1/-1;
+        grid-row: 2/ span 1;
+        margin: 0 $gap;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    & > p {
+        position: absolute;
+        bottom: 1.2rem;
+        right: 2rem;
+        backface-visibility: hidden;
+
+        transform: translateX(-5rem);
+        opacity: 0;
+
+        animation: about-move-right-in .5s cubic-bezier(0.175, 0.885, 0.32, 1.475) .95s;
+        animation-fill-mode: forwards;
+
+        @media only screen and (max-width: $bp-smallest) {
+            position: relative;
+            bottom: 0;
+            right: 0;
+            padding: $gap/2;
+        }
+    }
+
     &::after { //white animation line
         content: "";
         height: 100%;

@@ -5,6 +5,14 @@
     display: flex;
     flex-direction: column;
 
+    @media only screen and (max-width: $bp-medium) {
+        grid-column: 1/-1;
+        grid-row: 3/4;
+
+        flex-direction: row;
+        justify-content: center;
+    }
+
     &__box {
         transform: translateX(-10rem);
         opacity: 0; 
@@ -34,9 +42,6 @@
 
         &--4 {
             @include sidebar-button-anim(1.1s);
-
-            &::before {@include sidebar-before("jevlentjev@gmail.com");}
-            &:hover::before {width: 650%;}
         }
     }
 }

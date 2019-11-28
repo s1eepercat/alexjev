@@ -1,1 +1,3 @@
-make them avoid center
+Clean js
+
+adjust number of particles?

@@ -1,11 +1,25 @@
-.m-left-bot {
+.m-left-bot { //sidebar
     margin: 0px 0px $gap $gap;
+
+    @media only screen and (max-width: $bp-medium) {
+        margin: $gap $gap/2;
+    }
 }
 
-.m-left-top {
+.m-left-top { //sidebar mail
     margin: auto 0px 0px $gap;
+
+    @media only screen and (max-width: $bp-medium) {
+        margin: $gap $gap/2;
+    }
 }
 
 .cursor {
     cursor: pointer;
+}
+
+.m-small-top { //for about text to be pushed away from the button
+    @media only screen and (max-width: $bp-smallest) {
+        margin-top: $gap;
+    }
 }
