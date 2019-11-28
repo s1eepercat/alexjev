@@ -118,6 +118,7 @@ class Particle {
 const init = () => {
     particlesArray = [];
     let numberOfParticles = (canvas.height * canvas.width) / 9000;
+    if (numberOfParticles < 50) { numberOfParticles = 60 };
 
     for (let i = 0; i < numberOfParticles; i++) {
         let size = (Math.random() * 1) + 1;
@@ -202,3 +203,5 @@ const resizeDelay = () => {
 }
 
 document.getElementById('projects-toggle').addEventListener('input', resizeDelay);
+
+console.log(particlesArray.length);
