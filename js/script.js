@@ -202,8 +202,3 @@ const resizeDelay = () => {
 }
 
 document.getElementById('projects-toggle').addEventListener('input', resizeDelay);
-
-
-
-//test
-console.log(particlesArray.length);
