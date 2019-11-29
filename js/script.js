@@ -117,7 +117,7 @@ class Particle {
 //create particle array
 const init = () => {
     particlesArray = [];
-    let numberOfParticles = (canvas.height * canvas.width) / 9000;
+    let numberOfParticles = ((canvas.height * canvas.width) / 9000);
     if (numberOfParticles < 50) { numberOfParticles = 60 };
 
     for (let i = 0; i < numberOfParticles; i++) {
@@ -177,31 +177,78 @@ init();
 animate();
 
 
+
+
+//Init variables for canvas resizing
+let canvasOriginalHeight = canvas.height;
+let minimumProjectsHeight = document.getElementById('projects-area').clientHeight;
+let maximumProjectsHeight = minimumProjectsHeight; //to start with
+
+
+//Get full size of the project section as it's fully open after a click
+document.getElementById('projects-toggle').addEventListener('click', () => {
+
+    if (document.getElementById('projects-toggle').checked == true) {
+        setTimeout(function () {
+            maximumProjectsHeight = document.getElementById('projects-area').clientHeight;
+        }, 500);
+    }
+
+})
+
+
 //resize canvas on screen resize
 const resizeInstant = () => {
     init();
 
-    setTimeout(function () { //needs a slight delay to remove a gap below footer
+    const rect = body.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+
+    setTimeout(function () { //line below footer debug
         const rect = body.getBoundingClientRect();
         canvas.width = rect.width;
         canvas.height = rect.height;
-    }, 200);
+    }, 500);
+
+    //Calculate canvas height with "closed" projects
+    if (document.getElementById('projects-toggle').checked == true) {
+        maximumProjectsHeight = document.getElementById('projects-area').clientHeight;
+        canvasOriginalHeight = canvas.height - maximumProjectsHeight + minimumProjectsHeight;
+    } else {
+        canvasOriginalHeight = canvas.height;
+    }
 }
 
 window.addEventListener('resize', resizeInstant);
 
 
-//resize canvas with a delay, scroll top on project toggling
-const resizeDelay = () => {
-    window.scrollTo(0, 0);
+//resize canvas with a delay on project opening / closing
+const resizeProjects = () => {
 
-    setTimeout(function () {
-        const rect = body.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-    }, 350);
+    //Opening
+    if (canvas.height === canvasOriginalHeight) {
+        setTimeout(function () {
+            const rect = body.getBoundingClientRect();
+            canvas.height = rect.height;
+        }, 350);
+    }
+
+    //Closing
+    if (canvas.height > canvasOriginalHeight) {
+        canvas.height = canvasOriginalHeight;
+
+        setTimeout(function () {
+            const rect = body.getBoundingClientRect();
+            canvas.height = rect.height;
+        }, 350);
+
+        setTimeout(function () { //debug
+            const rect = body.getBoundingClientRect();
+            canvas.height = rect.height;
+        }, 450);
+    }
 }
 
-document.getElementById('projects-toggle').addEventListener('input', resizeDelay);
-
-console.log(particlesArray.length);
+document.getElementById('projects-toggle').addEventListener('input', resizeProjects);
+document.getElementById('projects-toggle').addEventListener('input', resizeProjects);
