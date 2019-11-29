@@ -227,9 +227,8 @@ const resizeProjects = () => {
         setTimeout(function () {
             const rect = body.getBoundingClientRect();
             canvas.height = rect.height;
-        }, 1100); //slightly bigger gap than the animation itself
+        }, 600); //slightly bigger gap than the animation itself
     }
 }
 
-document.getElementById('projects-toggle').addEventListener('input', resizeProjects);
 document.getElementById('projects-toggle').addEventListener('input', resizeProjects);
