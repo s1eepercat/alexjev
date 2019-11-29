@@ -181,6 +181,7 @@ animate();
 
 //Init variables for canvas resizing
 let canvasOriginalHeight = canvas.height;
+console.log(canvasOriginalHeight);
 let minimumProjectsHeight = document.getElementById('projects-area').clientHeight;
 let maximumProjectsHeight = minimumProjectsHeight; //to start with
 
@@ -193,7 +194,6 @@ document.getElementById('projects-toggle').addEventListener('click', () => {
             maximumProjectsHeight = document.getElementById('projects-area').clientHeight;
         }, 500);
     }
-
 })
 
 
@@ -241,12 +241,7 @@ const resizeProjects = () => {
         setTimeout(function () {
             const rect = body.getBoundingClientRect();
             canvas.height = rect.height;
-        }, 350);
-
-        setTimeout(function () { //debug
-            const rect = body.getBoundingClientRect();
-            canvas.height = rect.height;
-        }, 450);
+        }, 450); //slightly bigger gap than the animation itself
     }
 }
 
