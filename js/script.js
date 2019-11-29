@@ -187,18 +187,20 @@ const resizeInstant = () => {
     canvas.width = body.scrollWidth;
     canvas.height = body.scrollHeight;
 
-    setTimeout(function () { //line below footer debug
+    setTimeout(function () { //to make sure sizing is correct
         canvas.width = body.scrollWidth;
         canvas.height = body.scrollHeight;
-    }, 250);
+    }, 200);
 
-    //Uncheck projects
+    //Uncheck projects and shut the section instantly
+    const container = document.getElementById("projects-container");
+    container.classList.add('notransition'); //disable transitions
     document.getElementById("projects-toggle").checked = false;
+    container.offsetHeight; // Trigger a reflow, flushing the CSS changes
+    container.classList.remove('notransition'); // Re-enable transitions
 
     //Get new canvas size as soon as projects close
-    setTimeout(() => {
-        canvasOriginalHeight = canvas.height;
-    }, 600);
+    canvasOriginalHeight = canvas.height;
 
 }
 

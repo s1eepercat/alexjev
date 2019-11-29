@@ -23,3 +23,7 @@
         margin-top: $gap;
     }
 }
+
+.notransition {
+    transition: none !important;
+}
