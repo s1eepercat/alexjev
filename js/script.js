@@ -117,7 +117,7 @@ class Particle {
 //create particle array
 const init = () => {
     particlesArray = [];
-    let numberOfParticles = ((canvas.height * canvas.width) / 9000);
+    let numberOfParticles = ((canvas.height * canvas.width) / 9000) * 0.65;
     if (numberOfParticles < 50) { numberOfParticles = 60 };
 
     for (let i = 0; i < numberOfParticles; i++) {
@@ -181,21 +181,6 @@ animate();
 
 //Init variables for canvas resizing
 let canvasOriginalHeight = canvas.height;
-console.log(canvasOriginalHeight);
-let minimumProjectsHeight = document.getElementById('projects-area').clientHeight;
-let maximumProjectsHeight = minimumProjectsHeight; //to start with
-
-
-//Get full size of the project section as it's fully open after a click
-document.getElementById('projects-toggle').addEventListener('click', () => {
-
-    if (document.getElementById('projects-toggle').checked == true) {
-        setTimeout(function () {
-            maximumProjectsHeight = document.getElementById('projects-area').clientHeight;
-        }, 1050);
-    }
-})
-
 
 //resize canvas on screen resize
 const resizeInstant = () => {
@@ -211,13 +196,14 @@ const resizeInstant = () => {
         canvas.height = rect.height;
     }, 250);
 
-    //Calculate canvas height with "closed" projects
-    if (document.getElementById('projects-toggle').checked == true) {
-        maximumProjectsHeight = document.getElementById('projects-area').clientHeight;
-        canvasOriginalHeight = canvas.height - maximumProjectsHeight + minimumProjectsHeight;
-    } else {
+    //Uncheck projects
+    document.getElementById("projects-toggle").checked = false;
+
+    //Get new canvas size as soon as projects close
+    setTimeout(() => {
         canvasOriginalHeight = canvas.height;
-    }
+    }, 600);
+
 }
 
 window.addEventListener('resize', resizeInstant);
@@ -231,7 +217,7 @@ const resizeProjects = () => {
         setTimeout(function () {
             const rect = body.getBoundingClientRect();
             canvas.height = rect.height;
-        }, 1050);
+        }, 600);
     }
 
     //Closing
@@ -241,7 +227,7 @@ const resizeProjects = () => {
         setTimeout(function () {
             const rect = body.getBoundingClientRect();
             canvas.height = rect.height;
-        }, 1050); //slightly bigger gap than the animation itself
+        }, 1100); //slightly bigger gap than the animation itself
     }
 }
 

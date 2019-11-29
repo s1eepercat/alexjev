@@ -474,7 +474,7 @@ body {
     height: 50rem;
     margin-top: 3.5rem; }
   .projects__container {
-    transition: 1s all;
+    transition: .5s all;
     overflow: hidden;
     width: 70rem;
     height: 0;
