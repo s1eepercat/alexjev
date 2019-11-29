@@ -192,7 +192,7 @@ document.getElementById('projects-toggle').addEventListener('click', () => {
     if (document.getElementById('projects-toggle').checked == true) {
         setTimeout(function () {
             maximumProjectsHeight = document.getElementById('projects-area').clientHeight;
-        }, 500);
+        }, 1050);
     }
 })
 
@@ -209,7 +209,7 @@ const resizeInstant = () => {
         const rect = body.getBoundingClientRect();
         canvas.width = rect.width;
         canvas.height = rect.height;
-    }, 500);
+    }, 250);
 
     //Calculate canvas height with "closed" projects
     if (document.getElementById('projects-toggle').checked == true) {
@@ -231,7 +231,7 @@ const resizeProjects = () => {
         setTimeout(function () {
             const rect = body.getBoundingClientRect();
             canvas.height = rect.height;
-        }, 350);
+        }, 1050);
     }
 
     //Closing
@@ -241,7 +241,7 @@ const resizeProjects = () => {
         setTimeout(function () {
             const rect = body.getBoundingClientRect();
             canvas.height = rect.height;
-        }, 450); //slightly bigger gap than the animation itself
+        }, 1050); //slightly bigger gap than the animation itself
     }
 }
 
