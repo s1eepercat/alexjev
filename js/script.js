@@ -17,9 +17,8 @@ const ctx = canvas.getContext('2d');
 
 const body = document.getElementById("body");
 
-const rect = body.getBoundingClientRect();
-canvas.width = rect.width;
-canvas.height = rect.height;
+canvas.width = body.scrollWidth;
+canvas.height = body.scrollHeight;
 
 let particlesArray;
 
@@ -156,8 +155,7 @@ const connect = () => {
 const animate = () => {
     requestAnimationFrame(animate);
 
-    const rect = body.getBoundingClientRect();
-    ctx.clearRect(0, 0, rect.width, rect.height);
+    ctx.clearRect(0, 0, body.scrollWidth, body.scrollHeight);
 
     for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
@@ -186,14 +184,12 @@ let canvasOriginalHeight = canvas.height;
 const resizeInstant = () => {
     init();
 
-    const rect = body.getBoundingClientRect();
-    canvas.width = rect.width;
-    canvas.height = rect.height;
+    canvas.width = body.scrollWidth;
+    canvas.height = body.scrollHeight;
 
     setTimeout(function () { //line below footer debug
-        const rect = body.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
+        canvas.width = body.scrollWidth;
+        canvas.height = body.scrollHeight;
     }, 250);
 
     //Uncheck projects
@@ -215,8 +211,7 @@ const resizeProjects = () => {
     //Opening
     if (canvas.height === canvasOriginalHeight) {
         setTimeout(function () {
-            const rect = body.getBoundingClientRect();
-            canvas.height = rect.height;
+            canvas.height = body.scrollHeight;
         }, 600);
     }
 
@@ -225,8 +220,7 @@ const resizeProjects = () => {
         canvas.height = canvasOriginalHeight;
 
         setTimeout(function () {
-            const rect = body.getBoundingClientRect();
-            canvas.height = rect.height;
+            canvas.height = body.scrollHeight;
         }, 600); //slightly bigger gap than the animation itself
     }
 }
