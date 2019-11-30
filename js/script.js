@@ -180,17 +180,47 @@ animate();
 //Init variables for canvas resizing
 let canvasOriginalHeight = canvas.height;
 
+
+//Detect if device is a touch screen
+let isTouchScreen = 0;
+window.addEventListener('touchstart', () => {
+    isTouchScreen = 1;
+});
+
+
+//Detect if orientation has changed
+let orientationChanged = 0;
+window.addEventListener("orientationchange", () => {
+    orientationChanged = 1;
+});
+
+
 //resize canvas on screen resize
-const resizeInstant = () => {
-    init();
+window.addEventListener('resize', () => {
+    if (isTouchScreen === 0 && orientationChanged === 0) {
+        resize();
+    } else if ((isTouchScreen === 0 && orientationChanged === 1) || (isTouchScreen === 1 && orientationChanged === 1)) {
+        //touch devices allow resize only on orientation change, as resize is sometimes triggered by the browser top bar
+        orientationChanged = 0;
+        resize();
+    }
+});
+
+
+//Actual resize function
+function resize() {
+    let footerHeight = document.getElementById("footer").offsetHeight;
 
     canvas.width = body.scrollWidth;
-    canvas.height = body.scrollHeight;
+    canvas.height = body.scrollHeight - footerHeight;
 
     setTimeout(function () { //to make sure sizing is correct
         canvas.width = body.scrollWidth;
-        canvas.height = body.scrollHeight;
-    }, 200);
+        canvas.height = body.scrollHeight - footerHeight;
+
+        //Get new canvas size as soon as projects close
+        canvasOriginalHeight = canvas.height;
+    }, 250);
 
     //Uncheck projects and shut the section instantly
     const container = document.getElementById("projects-container");
@@ -199,12 +229,8 @@ const resizeInstant = () => {
     container.offsetHeight; // Trigger a reflow, flushing the CSS changes
     container.classList.remove('notransition'); // Re-enable transitions
 
-    //Get new canvas size as soon as projects close
-    canvasOriginalHeight = canvas.height;
-
+    init();
 }
-
-window.addEventListener('resize', resizeInstant);
 
 
 //resize canvas with a delay on project opening / closing
