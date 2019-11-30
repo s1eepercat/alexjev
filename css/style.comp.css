@@ -94,7 +94,7 @@ html {
   @media only screen and (max-width: 68.75em) {
     html {
       font-size: 55%; } }
-  @media only screen and (max-width: 31.25em) {
+  @media only screen and (max-width: 25em) {
     html {
       font-size: 50%; } }
 
@@ -139,6 +139,9 @@ body {
 @media only screen and (max-width: 31.25em) {
   .m-small-top {
     margin-top: 3.5rem; } }
+
+.notransition {
+  transition: none !important; }
 
 .btn-container {
   height: 4rem;
@@ -217,7 +220,8 @@ body {
       margin-bottom: auto;
       margin-top: auto;
       width: 100%;
-      padding: 0 10rem; } }
+      padding: 0 10rem;
+      font-size: 2.2rem; } }
   @media only screen and (max-width: 25em) {
     .heading {
       font-size: 2.2rem;
@@ -474,7 +478,7 @@ body {
     height: 50rem;
     margin-top: 3.5rem; }
   .projects__container {
-    transition: .35s all;
+    transition: .5s all;
     overflow: hidden;
     width: 70rem;
     height: 0;
