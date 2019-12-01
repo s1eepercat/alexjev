@@ -1,9 +1,15 @@
 .sidebar {
+
     grid-column: 4/-1;
     grid-row: 2/3;
 
     display: flex;
     flex-direction: column;
+
+
+    //IE support 
+    @include sidebar-ie-support;
+
 
     @media only screen and (max-width: $bp-medium) {
         grid-column: 1/-1;
@@ -22,26 +28,56 @@
         &--1 {
             @include sidebar-button-anim(.95s);
 
-            &::before {@include sidebar-before("Github");}
+            //Disable in ie
+            &::before {
+                @supports (display: grid) {
+                    @include sidebar-before("Github");
+                }
+            }
+
             &:hover::before {width: 300%;}
+
+            //IE support 
+            @include github-ie-support;
         }
 
         &--2 {
             @include sidebar-button-anim(1s);
 
-            &::before {@include sidebar-before("LinkedIn");}
+            //Disable in ie
+            &::before {
+                @supports (display: grid) {
+                    @include sidebar-before("LinkedIn");
+                }   
+            }
+
             &:hover::before {width: 300%;}
+
+            //IE support
+            @include linkedin-ie-support;
         }
 
         &--3 {
             @include sidebar-button-anim(1.05s);
 
-            &::before {@include sidebar-before("Facebook");}
+            //Disable in ie
+            &::before {
+                @supports (display: grid) {                
+                    @include sidebar-before("Facebook");
+                }   
+            }
+
             &:hover::before {width: 300%;}
+
+            //IE support
+            @include facebook-ie-support;
         }
 
         &--4 {
             @include sidebar-button-anim(1.1s);
+
+            //IE support
+            @include mail-ie-support;      
         }
     }
 }

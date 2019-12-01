@@ -1,4 +1,7 @@
 .footer {
+    // IE support 
+    @include footer-ie-support;
+
     grid-column: 1 / -1;
     grid-row: 4/-1;
 

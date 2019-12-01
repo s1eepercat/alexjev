@@ -34,6 +34,9 @@
     }
 
     &__btn {
+        // IE support 
+        @include projects-ie-support;
+
         display: flex;
         justify-content: center;
         align-items: center;

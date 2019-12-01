@@ -1,13 +1,20 @@
 .m-left-bot { //sidebar
     margin: 0px 0px $gap $gap;
 
+    //IE support
+    @include m-left-bot-ie-support;
+
     @media only screen and (max-width: $bp-medium) {
         margin: $gap $gap/2;
     }
 }
 
 .m-left-top { //sidebar mail
+
     margin: auto 0px 0px $gap;
+
+    //IE support 
+    @include m-left-top-ie-support;
 
     @media only screen and (max-width: $bp-medium) {
         margin: $gap $gap/2;

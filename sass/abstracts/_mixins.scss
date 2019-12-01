@@ -3,8 +3,8 @@
     animation-fill-mode: forwards;
 }
 
-@mixin sidebar-before ($content) {
-
+@mixin sidebar-before ($content) {  
+    
     @media only screen and (min-width: $bp-largest) {
         content: $content;
         position: absolute;

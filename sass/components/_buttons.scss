@@ -47,5 +47,15 @@
         fill: $color-white-1;
         height: 2rem;
         width: 2rem;
+
+        // IE support ========================================================
+        height: 20vh;
+        justify-content: center;
+        
+        @supports (display: grid) {
+            height: initial;
+            justify-content: initial;
+        }
+        // ========================================================
     }
 }
