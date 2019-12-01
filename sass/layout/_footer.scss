@@ -8,16 +8,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-color: $color-black-1;
 
     @media only screen and (max-width: $bp-medium) {
         grid-row: 5/-1;
     }   
+
+    transform-origin: left;
+    position: relative;
+    animation: line-grow .7s cubic-bezier(0.86, 0, 0.07, 1);
+    animation-fill-mode: forwards;
+
+    background-color: $color-black-1; //black before the animation
+
+    &::after { //white animation line
+        content: "";
+        height: 100%;
+        width: 100%;
+        display: block;
+        position:absolute;
+        top: 0;
+        left: 0;
+
+        background-color: $color-white-1;
+        border: $border;
+        
+        opacity: 0; //invisible before and after the animation
+        animation: white-line-move .5s cubic-bezier(0.86, 0, 0.07, 1) .7s;
+
+        z-index: 25; //to hide about in ie
+    }
 }
 
 .copyright {
     font-size: 1.2rem;
+
+    backface-visibility: hidden;
+    opacity: 0;
+    animation: about-ie-move-right-in .5s cubic-bezier(0.175, 0.885, 0.32, 1.475) .95s;
+    animation-fill-mode: forwards;
 
     @media only screen and (max-width: $bp-smallest) {
         text-align: center;

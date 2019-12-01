@@ -65,6 +65,17 @@
     }
 }
 
+@keyframes about-ie-move-right-in {
+    0% {
+        // transform: translateX(-5rem);
+    }
+
+    100% {
+        // transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 @keyframes projects-btn-show {
     100% {
         color: $color-white-1;
