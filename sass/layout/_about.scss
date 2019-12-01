@@ -8,7 +8,8 @@
     align-self: start;
     justify-self: start;
 
-    z-index: 50;
+    z-index: $about-dpt;
+    position: relative;
 
     height: 100%;
     width: 100%;

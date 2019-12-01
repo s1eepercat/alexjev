@@ -1,10 +1,7 @@
 @keyframes bg-swap {
     0% { background-image: url("../img/dr.jpg");}
-    50% { background-image: url("../img/br.jpg");}
+    50% { background-image: url("../img/dr.jpg");}
     100% { background-image: url("../img/dr.jpg");}
-    // 33% {background-image: url(../img/me-2.jpg);}
-    // 66% {background-image: url(../img/me-3.jpg);}
-    // 100% {background-image: url(../img/me-1.jpg);}
 }
 
 @keyframes line-grow {

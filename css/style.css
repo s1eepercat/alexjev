@@ -11,7 +11,7 @@
   0% {
     background-image: url("../img/dr.jpg"); }
   50% {
-    background-image: url("../img/br.jpg"); }
+    background-image: url("../img/dr.jpg"); }
   100% {
     background-image: url("../img/dr.jpg"); } }
 
@@ -262,18 +262,17 @@ body {
   min-height: 50rem;
   max-width: 90%;
   margin: 0 auto;
-  background-image: url(../img/dr.jpg);
-  background-repeat: no-repeat;
-  z-index: 10;
+  background-image: url("../img/dr.jpg");
+  z-index: 1;
   grid-column: 2/ span 2;
   grid-row: 2/ span 1;
+  background-color: #080808;
   background-size: cover;
-  background-position: 60% left;
+  background-position: left;
   transform-origin: left;
   position: relative;
   animation: line-grow 0.7s cubic-bezier(0.86, 0, 0.07, 1), bg-swap 7s 0.95s infinite;
-  animation-fill-mode: forwards;
-  background-color: #080808; }
+  animation-fill-mode: forwards; }
   .background::before {
     content: "Hi, my name is Aleksandr Jevlentjev. \A I love coding and unique designs.";
     white-space: pre-line;
@@ -296,8 +295,7 @@ body {
       min-height: initial;
       max-width: initial;
       margin: initial;
-      background-image: initial;
-      background-repeat: initial; }
+      background-image: initial; }
       .background::before {
         content: none; } }
   @media only screen and (max-width: 56.25em) {
@@ -337,7 +335,7 @@ body {
     border: 1px solid #080808;
     opacity: 0;
     animation: white-line-move 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.7s;
-    z-index: 25; }
+    z-index: 2; }
 
 .sidebar {
   grid-column: 4/-1;
@@ -389,7 +387,7 @@ body {
         left: 3px;
         text-align: center;
         color: #f2f2f2;
-        z-index: 100; }
+        z-index: 1; }
       @supports (display: grid) {
         .sidebar__box--1::after {
           content: none; } }
@@ -422,7 +420,7 @@ body {
         left: 3px;
         text-align: center;
         color: #f2f2f2;
-        z-index: 100; }
+        z-index: 1; }
       @supports (display: grid) {
         .sidebar__box--2::after {
           content: none; } }
@@ -455,7 +453,7 @@ body {
         left: 3px;
         text-align: center;
         color: #f2f2f2;
-        z-index: 100; }
+        z-index: 1; }
       @supports (display: grid) {
         .sidebar__box--3::after {
           content: none; } }
@@ -471,7 +469,7 @@ body {
         left: 3px;
         text-align: center;
         color: #f2f2f2;
-        z-index: 100;
+        z-index: 1;
         font-size: 2rem; }
       @supports (display: grid) {
         .sidebar__box--4::after {
@@ -483,7 +481,8 @@ body {
   grid-row: 2/ span 1;
   align-self: start;
   justify-self: start;
-  z-index: 50;
+  z-index: 3;
+  position: relative;
   height: 100%;
   width: 100%;
   padding: 3.5rem; }
@@ -579,7 +578,7 @@ body {
       top: 15%;
       left: 85%;
       color: #f2f2f2;
-      z-index: 100;
+      z-index: 1;
       backface-visibility: hidden;
       opacity: 0;
       animation: about-ie-move-right-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.475) 0.95s;

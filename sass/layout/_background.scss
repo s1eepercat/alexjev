@@ -3,20 +3,20 @@
     //IE support 
     @include background-ie-support;
 
-    z-index: 10;
+    z-index: $background-dpt;
 
     grid-column: 2/ span 2;
     grid-row: 2/ span 1;
 
+    background-color: $color-black-1; //black before the animation
+    
     background-size: cover;
-    background-position: 60% left;
+    background-position: left;
  
     transform-origin: left;
     position: relative;
     animation: line-grow .7s cubic-bezier(0.86, 0, 0.07, 1), bg-swap 7s .95s infinite;
     animation-fill-mode: forwards;
-
-    background-color: $color-black-1; //black before the animation
 
     @media only screen and (max-width: $bp-medium) {
         grid-column: 1/-1;
@@ -66,6 +66,6 @@
 
         animation: white-line-move .5s cubic-bezier(0.86, 0, 0.07, 1) .7s;
 
-        z-index: 25; //to hide about in ie
+        z-index: $background-white-animation-dpt; //to hide about in ie
     }
 }
