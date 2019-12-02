@@ -1,3 +1,3 @@
-MAKE FOOTER SLIDE IN???
-
-MICR EDGE WONT SHOW IMAGE
+Favicon
+Image
+Images for IE

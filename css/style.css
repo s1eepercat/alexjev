@@ -9,11 +9,11 @@
 
 @keyframes bg-swap {
   0% {
-    background-image: url("../img/dr.jpg"); }
+    background-image: url("../img/me.jpg"); }
   50% {
-    background-image: url("../img/dr.jpg"); }
+    background-image: url("../img/me.jpg"); }
   100% {
-    background-image: url("../img/dr.jpg"); } }
+    background-image: url("../img/me.jpg"); } }
 
 @keyframes line-grow {
   0% {
