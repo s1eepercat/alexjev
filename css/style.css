@@ -191,18 +191,18 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr 450px 250px 1fr;
-  grid-template-rows: 25vh minmax(500px, 50vh) minmax(calc(25vh - 5rem), max-content) 4rem; }
+  grid-template-rows: 25vh minmax(max-content, 50vh) minmax(calc(25vh - 5rem), max-content) 4rem; }
   @media only screen and (max-width: 56.25em) {
     .grid {
       grid-template-columns: minmax(580px, 1fr);
-      grid-template-rows: 20vh minmax(500px, 50vh) 7.5rem minmax(calc(25vh - 5rem), max-content) 4rem; } }
+      grid-template-rows: 20vh minmax(max-content, 50vh) 7.5rem minmax(calc(25vh - 5rem), max-content) 4rem; } }
   @media only screen and (max-width: 37.5em) {
     .grid {
       grid-template-columns: minmax(480px, 1fr); } }
   @media only screen and (max-width: 31.25em) {
     .grid {
       grid-template-columns: minmax(300px, 1fr);
-      grid-template-rows: 15vh minmax(500px, 50vh) 7.5rem minmax(calc(25vh - 5rem), max-content) 6rem; } }
+      grid-template-rows: 15vh minmax(max-content, 50vh) 7.5rem minmax(calc(25vh - 5rem), max-content) 6rem; } }
 
 .header {
   height: 20vh;
@@ -262,7 +262,7 @@ body {
   min-height: 50rem;
   max-width: 90%;
   margin: 0 auto;
-  background-image: url("../img/dr.jpg");
+  background-image: url("../img/me.jpg");
   z-index: 1;
   grid-column: 2/ span 2;
   grid-row: 2/ span 1;
