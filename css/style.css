@@ -191,7 +191,7 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr 450px 250px 1fr;
-  grid-template-rows: 25vh minmax(max-content, 50vh) minmax(calc(25vh - 5rem), max-content) 4rem; }
+  grid-template-rows: 25vh minmax(500px, 50vh) minmax(calc(25vh - 5rem), max-content) 4rem; }
   @media only screen and (max-width: 56.25em) {
     .grid {
       grid-template-columns: minmax(580px, 1fr);
@@ -379,15 +379,18 @@ body {
       .sidebar__box--1:hover::before {
         width: 300%; }
       .sidebar__box--1::after {
-        content: "GIT";
-        height: 100%;
-        width: 100%;
+        content: "";
+        height: 50%;
+        width: 50%;
         position: absolute;
-        top: 1rem;
-        left: 3px;
+        top: 25%;
+        left: 25%;
         text-align: center;
         color: #f2f2f2;
-        z-index: 1; }
+        z-index: 1;
+        background-image: url("../img/github.png");
+        background-repeat: no-repeat;
+        background-size: cover; }
       @supports (display: grid) {
         .sidebar__box--1::after {
           content: none; } }
@@ -412,15 +415,18 @@ body {
       .sidebar__box--2:hover::before {
         width: 300%; }
       .sidebar__box--2::after {
-        content: "IN";
-        height: 100%;
-        width: 100%;
+        content: "";
+        height: 50%;
+        width: 50%;
         position: absolute;
-        top: 1rem;
-        left: 3px;
+        top: 25%;
+        left: 25%;
         text-align: center;
         color: #f2f2f2;
-        z-index: 1; }
+        z-index: 1;
+        background-image: url("../img/linkedin.png");
+        background-repeat: no-repeat;
+        background-size: cover; }
       @supports (display: grid) {
         .sidebar__box--2::after {
           content: none; } }
@@ -445,15 +451,18 @@ body {
       .sidebar__box--3:hover::before {
         width: 300%; }
       .sidebar__box--3::after {
-        content: "FB";
-        height: 100%;
-        width: 100%;
+        content: "";
+        height: 50%;
+        width: 50%;
         position: absolute;
-        top: 1rem;
-        left: 3px;
+        top: 25%;
+        left: 25%;
         text-align: center;
         color: #f2f2f2;
-        z-index: 1; }
+        z-index: 1;
+        background-image: url("../img/facebook.png");
+        background-repeat: no-repeat;
+        background-size: cover; }
       @supports (display: grid) {
         .sidebar__box--3::after {
           content: none; } }
@@ -461,22 +470,25 @@ body {
       animation: sidebar-btn-move 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.475) 1.1s;
       animation-fill-mode: forwards; }
       .sidebar__box--4::after {
-        content: "@";
-        height: 100%;
-        width: 100%;
+        content: "";
+        height: 50%;
+        width: 50%;
         position: absolute;
-        top: 3px;
-        left: 3px;
+        top: 25%;
+        left: 25%;
         text-align: center;
         color: #f2f2f2;
         z-index: 1;
-        font-size: 2rem; }
+        background-image: url("../img/mail.png");
+        background-repeat: no-repeat;
+        background-size: cover; }
       @supports (display: grid) {
         .sidebar__box--4::after {
           content: none; } }
 
 .about {
   display: none;
+  min-height: 500px;
   grid-column: 2/3;
   grid-row: 2/ span 1;
   align-self: start;

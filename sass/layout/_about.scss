@@ -2,6 +2,8 @@
     // IE support 
     @include about-ie-support;
 
+    min-height: 500px;
+
     grid-column: 2/3;
     grid-row: 2/ span 1;
 

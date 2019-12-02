@@ -1,3 +1,1 @@
-Favicon
-Image
-Images for IE
+Photo change
