@@ -11,11 +11,11 @@
     background-color: $color-black-1; //black before the animation
     
     background-size: cover;
-    background-position: left;
+    background-position: right;
  
     transform-origin: left;
     position: relative;
-    animation: line-grow .7s cubic-bezier(0.86, 0, 0.07, 1), bg-swap 7s .95s infinite;
+    animation: line-grow .7s cubic-bezier(0.86, 0, 0.07, 1), bg-swap 1s 1.2s infinite; //.7s 1s .95s
     animation-fill-mode: forwards;
 
     @media only screen and (max-width: $bp-medium) {
@@ -39,7 +39,7 @@
         transform: translateX(-5rem);
         opacity: 0;
 
-        animation: about-move-right-in .5s cubic-bezier(0.175, 0.885, 0.32, 1.475) .95s;
+        animation: about-move-right-in .5s cubic-bezier(0.175, 0.885, 0.32, 1.475) 1.2s; //.5s .95s
         animation-fill-mode: forwards;
 
         @media only screen and (max-width: $bp-smallest) {
@@ -64,7 +64,7 @@
         
         opacity: 0; //invisible before and after the animation
 
-        animation: white-line-move .5s cubic-bezier(0.86, 0, 0.07, 1) .7s;
+        animation: white-line-move 1s cubic-bezier(0.86, 0, 0.07, 1) .7s; //.5s .7s
 
         z-index: $background-white-animation-dpt; //to hide about in ie
     }

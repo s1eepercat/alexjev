@@ -47,7 +47,7 @@
 
         transform-origin: left;
         position: relative;
-        animation: line-grow .7s cubic-bezier(0.86, 0, 0.07, 1), projects-btn-show .1s .95s;
+        animation: line-grow .7s cubic-bezier(0.86, 0, 0.07, 1), projects-btn-show .1s 1.2s; //.7s .1s .95s
         animation-fill-mode: forwards;
     }
 
@@ -65,7 +65,7 @@
         
         opacity: 0; //invisible before and after the animation
 
-        animation: white-line-move .5s cubic-bezier(0.86, 0, 0.07, 1) .7s;
+        animation: white-line-move 1s cubic-bezier(0.86, 0, 0.07, 1) .7s; //.5s .7s
     }
 
     &__icon {

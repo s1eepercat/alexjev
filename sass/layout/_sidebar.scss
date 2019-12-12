@@ -26,7 +26,7 @@
         position: relative;
 
         &--1 {
-            @include sidebar-button-anim(.95s);
+            @include sidebar-button-anim(.5s); //.95s
 
             //Disable in ie
             &::before {
@@ -42,7 +42,7 @@
         }
 
         &--2 {
-            @include sidebar-button-anim(1s);
+            @include sidebar-button-anim(.55s); //1s
 
             //Disable in ie
             &::before {
@@ -58,7 +58,7 @@
         }
 
         &--3 {
-            @include sidebar-button-anim(1.05s);
+            @include sidebar-button-anim(.6s); //1.05s
 
             //Disable in ie
             &::before {
@@ -74,7 +74,7 @@
         }
 
         &--4 {
-            @include sidebar-button-anim(1.1s);
+            @include sidebar-button-anim(.65s); //1.1s
 
             //IE support
             @include mail-ie-support;      

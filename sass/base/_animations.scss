@@ -1,7 +1,6 @@
 @keyframes bg-swap {
-    0% { background-image: url("../img/me.jpg");}
-    50% { background-image: url("../img/me.jpg");}
-    100% { background-image: url("../img/me.jpg");}
+    0% { background-image: $bg-img;}
+    100% { background-image: $bg-img;}
 }
 
 @keyframes line-grow {

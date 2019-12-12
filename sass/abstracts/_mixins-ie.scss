@@ -38,6 +38,7 @@
 @mixin sidebar-ie-support {
     flex-direction: row;
     justify-content: center;
+
             
     @supports (display: grid) {
         flex-direction: column;
@@ -159,7 +160,7 @@
     min-height: 50rem;
     max-width: 90%;
     margin: 0 auto;
-    background-image: url("../img/me.jpg");
+    background-image: $bg-img;
 
     &::before {
         content: "Hi, my name is Aleksandr Jevlentjev. \A I love coding and unique designs.";

@@ -23,10 +23,9 @@ if (navigator.userAgent.indexOf("Edge") != -1) {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext('2d');
 
-    const body = document.getElementById("body");
-
-    canvas.width = body.scrollWidth;
-    canvas.height = body.scrollHeight;
+    let footerHeight = document.getElementById("footer").offsetHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     let particlesArray;
 
@@ -219,12 +218,12 @@ if (navigator.userAgent.indexOf("Edge") != -1) {
     function resize() {
         let footerHeight = document.getElementById("footer").offsetHeight;
 
-        canvas.width = body.scrollWidth;
-        canvas.height = body.scrollHeight - footerHeight;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight - footerHeight;
 
         setTimeout(function () { //to make sure sizing is correct
-            canvas.width = body.scrollWidth;
-            canvas.height = body.scrollHeight - footerHeight;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight - footerHeight;
 
             //Get new canvas size as soon as projects close
             canvasOriginalHeight = canvas.height;
