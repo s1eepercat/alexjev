@@ -23,7 +23,6 @@ if (navigator.userAgent.indexOf("Edge") != -1) {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext('2d');
 
-    let footerHeight = document.getElementById("footer").offsetHeight;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
@@ -79,13 +78,6 @@ if (navigator.userAgent.indexOf("Edge") != -1) {
                 this.directionY = Math.abs(this.directionY);
             }
 
-            // if (this.x > canvas.width + 15) { //for horizontal
-            //     this.x = (Math.random() * canvas.width);
-            //     this.y = 0;
-            //     this.directionY = Math.abs(this.directionY);
-            // }
-
-            //check collision detection - mouse position / particle position
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
             let distance = Math.sqrt(dx * dx + dy * dy);
@@ -123,7 +115,7 @@ if (navigator.userAgent.indexOf("Edge") != -1) {
     //create particle array
     const init = () => {
         particlesArray = [];
-        let numberOfParticles = ((canvas.height * canvas.width) / 9000) * 0.65;
+        let numberOfParticles = ((canvas.height * canvas.width) / 9000) * 0.5;
         if (numberOfParticles < 50) { numberOfParticles = 60 };
 
         for (let i = 0; i < numberOfParticles; i++) {

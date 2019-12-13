@@ -635,7 +635,7 @@ body {
       .projects__container {
         width: 100%; } }
   .projects__project {
-    background-image: linear-gradient(to right, #121212, #aaaaaa);
+    background-color: #121212;
     color: #f2f2f2;
     width: 100%;
     height: 15rem;
@@ -650,7 +650,12 @@ body {
   .projects__project-text {
     position: relative;
     padding: 1rem 2rem 1rem 2rem;
-    width: 100%; }
+    width: 100%;
+    font-size: 1.4rem; }
+    .projects__project-text:last-child {
+      padding-top: 0; }
+  .projects__project-title {
+    font-size: 1.6rem; }
   .projects__project-text:hover > .projects__selector {
     opacity: 1; }
   .projects__selector {
